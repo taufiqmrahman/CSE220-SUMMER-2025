@@ -5,13 +5,9 @@ class AssgnTask2{
     //YOU ONLY HAVE TO SUBMIT THIS METHOD, NO OTHER DRIVER CODE
     public static Integer rowRotation( Integer examWeek, String[][] matrix ){
 
-        
         int length = matrix.length;
-        int rotation = (examWeek % length)-1;
-        int count = length-1;
-
-        int k=0;
-        while(k<rotation){
+        int k=1;
+        while(k<examWeek){
             String [] last = matrix[length-1];
             for(int j = length-1; j>0;j--){
                 matrix[j] = matrix[j-1];
