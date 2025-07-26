@@ -10,25 +10,16 @@ class AssgnTask2{
         int rotation = (examWeek % length)-1;
         int count = length-1;
 
-        for(int i=0; i<count;i++){
-            String [] temp = matrix[i];
-            matrix[i] = matrix[count];
-            matrix[count--] = temp;
+        int k=0;
+        while(k<rotation){
+            String [] last = matrix[length-1];
+            for(int j = length-1; j>0;j--){
+                matrix[j] = matrix[j-1];
+            }
+            matrix[0] = last;
+            k++;
         }
-
-        int end = rotation-1; 
-        for(int i=0; i<end; i++){
-            String[] temp = matrix[i];
-            matrix[i] = matrix[end];
-            matrix[end--] = temp;
-        }
-
-        int end1 = matrix.length-1;
-        for(int i = rotation;i<end1;i++){
-            String [] temp = matrix[i];
-            matrix[i] = matrix[end1];
-            matrix[end1--] = temp;
-        }    
+        
         Arr.print2D(matrix);
         for(int i=0;i<length;i++){
             for(int j=0; j<matrix[0].length;j++){
